@@ -1,6 +1,23 @@
+<<<<<<< HEAD
 .classpath
 .project
 .settings
 bin
 build
 
+=======
+<<<<<<< HEAD
+.settings
+bin
+build
+.project
+.classpath
+=======
+.classpath
+.project
+.settings
+bin
+build
+
+>>>>>>> 5c0ed3a (학점 구하기)
+>>>>>>> 53be65a (4칙 연산)
