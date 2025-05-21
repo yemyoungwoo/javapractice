@@ -1,21 +1,26 @@
-// Test:main  Score:sub class
-// score mid fin rpt att
-// 1 person, 1 subject
+// 0402 #2
+// ArrayList vs Array  LinkedList
 package test2;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Random;
 
 public class Test {
-	//String grade;
-	//확장성 고민, 크기 함수...update
-	public Test() {}
-	
+
 	public static void main(String[] args) {
+		ArrayList<Integer> numbers = new ArrayList<>();
+		Random random = new Random();
 		
-		Score sc;
-		sc = new Score();
-		sc.score_input();
-		sc.score_compute_tot();
-		sc.score_compute_ave();
-		//sc.score_compute_grade();
-		sc.score_output();
+		//input
+		for(int i=0; i<10; i++) {
+			numbers.add(random.nextInt(100));
+		}
+		System.out.println("before sort "+numbers);
+		
+		Collections.sort(numbers);
+		
+		System.out.println("after sort "+numbers);
+		for (int i=0; i<numbers.size(); i++)
+			System.out.print(numbers.get(i)+" ");
 	}
 }

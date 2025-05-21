@@ -1,31 +1,42 @@
-// Test:main  Score:sub class
-// score mid fin rpt att
-// 1 person, 1 subject
+// 0402 #3
+// 5개과목 점수 평균, 학점
 package test3;
 
-public class Test extends Score{
-	//String grade;
-	//확장성 고민, 크기 함수...update
-	int rank;
-	public Test() {}
-	//생성자 ..
-	//메소드 re define 
-	public void score_compute_grade() {//char* grade;
-		if (tot>=95) grade="A+"; //strcpy("grade,"A+")
-		else if (tot>=90) grade="A0";
-		else grade="B+";	
+import java.util.ArrayList;
+
+public class Test {
+	public static int getAve(ArrayList<Integer> scores) {
+		int sum=0;
+		for(int score :scores)
+			sum += score;
+		return sum/scores.size();
 	}
-	public void score_compute_rank() {}
+	
+	public static String getGrade(int ave) {
+		if (ave >= 90) return "A";
+		else if (ave >= 80) return "B";
+		else if (ave >= 70) return "C";
+		else if (ave >= 60) return "D";
+		else return "F";
+	}
+	
 	public static void main(String[] args) {
+		ArrayList<Integer> scores = new ArrayList<>();
+		//input
+		for(int i=0; i<5; i++) {
+			scores.add((int)(Math.random()*41+60));
+			//echo print
+			//System.out.print(scores.get(i)+" ");
+		}
+		//to find ave, grade
+		int ave = getAve(scores);
+		String grade = getGrade(ave);
 		
-		Test t = new Test();
-		//Score sc;
-		//sc = new Score();
-		t.score_input();
-		t.score_compute_tot();
-		t.score_compute_ave();
-		//t.score_compute_grade(); redefine
-		//t.score_compute_rank();
-		t.score_output();
+		//output
+		System.out.println("scores : " + scores);
+		System.out.println("ave : " + ave);
+		System.out.println("grade : " + grade);
+
 	}
+
 }
